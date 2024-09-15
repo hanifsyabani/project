@@ -1,6 +1,6 @@
 "use client";
 
-import { PengajuanItem, PengajuanPage } from "@/utils/PengajuanItem";
+import { KategoriPengajuanItem } from "@/utils/PengajuanItem";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -26,7 +26,7 @@ const KategoriPengajuan: FC<SliderPengajuanProps> = ({
       simulateTouch={true}
       touchRatio={1}
     >
-      {PengajuanPage.map((item) => (
+      {KategoriPengajuanItem.map((item) => (
         <SwiperSlide key={item.id}>
           <div
             className={`hover:bg-secondary text-tertiary hover:text-white p-2 rounded-lg cursor-pointer ${

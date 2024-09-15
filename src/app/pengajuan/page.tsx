@@ -4,7 +4,7 @@ import CardJurnal from "@/components/Card/CardJurnal";
 import KategoriPengajuan from "@/components/Kategori/KategoriPengajuan";
 import HeaderPengajuan from "@/components/Kategori/KategoriProfil";
 import PengajuanList from "@/components/Profile/PenelitianLuaran/PengajuanData";
-import { PengajuanItem, PengajuanPage } from "@/utils/PengajuanItem";
+import { KategoriPengajuanItem } from "@/utils/PengajuanItem";
 import { useState } from "react";
 import { FaCalendarAlt, FaIdCard } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
@@ -16,7 +16,7 @@ export default function Pengajuan() {
 
   const [jenisPengajuan, setJenisPengajuan] = useState<string>("");
 
-  const filteredItem = PengajuanPage.find(
+  const filteredItem = KategoriPengajuanItem.find(
     (item) => item.title === selectedPengajuan
   );
 
@@ -31,25 +31,31 @@ export default function Pengajuan() {
       />
 
       <div className="mt-5">
-        <select
-          name="jenisPengajuan"
-          id="jenisPengajuan"
-          className="border border-tertiary px-1 py-2 outline-none rounded-xl"
-          onChange={(e) => setJenisPengajuan(e.target.value)}
-        >
-          <option value="#">Jenis Pengajuan</option>
-          {filteredItem ? (
-            filteredItem.item ? (
-              filteredItem.item.map((subItem) => (
-                <>
-                  <option value={subItem.name}>{subItem.name}</option>
-                </>
-              ))
-            ) : (
-              <p>Tidak ada item.</p>
-            )
-          ) : null}
-        </select>
+        {filteredItem ? (
+          filteredItem.item && filteredItem.item.length < 2 ? (
+            filteredItem.item.map((subItem) => <h1>{subItem.name}</h1>)
+          ) : (
+            <select
+              name="jenisPengajuan"
+              id="jenisPengajuan"
+              className="border border-tertiary px-1 py-2 outline-none rounded-xl"
+              onChange={(e) => setJenisPengajuan(e.target.value)}
+            >
+              <option value="#">Jenis Pengajuan</option>
+              {filteredItem ? (
+                filteredItem.item ? (
+                  filteredItem.item.map((subItem) => (
+                    <>
+                      <option value={subItem.name}>{subItem.name}</option>
+                    </>
+                  ))
+                ) : (
+                  <p>Tidak ada item.</p>
+                )
+              ) : null}
+            </select>
+          )
+        ) : null}
       </div>
       <div className="mt-4">
         <div className="border-2 border-[#047857] rounded-lg py-2 font-bold text-[#047857] text-center">

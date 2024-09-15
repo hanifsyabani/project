@@ -1,6 +1,6 @@
 import { title } from "process"
 
-export const PengajuanItem = [
+export const KategoriPenelitianLuaranItem = [
   {
     id:1,
     title: 'Karya Ilmiah',
@@ -53,7 +53,7 @@ export const PengajuanItem = [
   },
 ]
 
-export const PengajuanPage =[
+export const KategoriPengajuanItem =[
   {
     id:1,
     title: 'Insentif Publikasi Karya Ilmiah yang terbit dalam Prosiding',
