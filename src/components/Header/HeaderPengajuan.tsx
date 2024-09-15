@@ -21,7 +21,7 @@ const HeaderPengajuan: FC<SliderPengajuanProps> = ({
     <Swiper
       className="mySwiper"
       spaceBetween={10}
-      slidesPerView={5}
+      slidesPerView={2}
       grabCursor={true}
       simulateTouch={true}
       touchRatio={1}

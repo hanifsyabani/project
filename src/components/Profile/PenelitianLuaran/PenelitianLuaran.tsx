@@ -4,15 +4,18 @@ import { PengajuanItem } from "@/utils/PengajuanItem";
 import HeaderPengajuan from "../../Header/HeaderPengajuan";
 import CardJurnal from "../../Card/CardJurnal";
 import { useState } from "react";
-import PengajuanList from "./PengajuanData";
+import PengajuanList from "./PengajuanData"; // bypass ini dengan Journal
+import Journal from "@/app/journal";
+
 
 export default function PenelitianLuaran() {
   const [selectedPengajuan, setSelectedPengajuan] = useState<string>(
-    "Publikasi Karya Ilmiah"
+    "Journal"
   );
 
   const renderContent = () => {
-    return <PengajuanList title={selectedPengajuan} />;
+    console.log(selectedPengajuan);
+    return <Journal aggregation_type={selectedPengajuan} />;
   };
 
   return (

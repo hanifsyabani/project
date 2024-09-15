@@ -1,8 +1,10 @@
+import Journal from "@/app/journal";
 import CardJurnal from "@/components/Card/CardJurnal";
 import { PengajuanItem } from "@/utils/PengajuanItem";
 
 export default function PengajuanList({ title }: { title: string }) {
   const filteredItem = PengajuanItem.find((item) => item.title === title);
+  console.log(filteredItem);
   return (
     <div>
       {filteredItem ? (
@@ -12,7 +14,7 @@ export default function PengajuanList({ title }: { title: string }) {
               <div key={subItem.id} className="mb-6">
                 <h1 className="font-semibold text-2xl my-3">{subItem.title}</h1>
                 <div className="" >
-                  <CardJurnal />
+                  <CardJurnal /> 
                 </div>
               </div>
             ))
