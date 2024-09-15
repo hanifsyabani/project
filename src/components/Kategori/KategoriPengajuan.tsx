@@ -1,6 +1,6 @@
 "use client";
 
-import { PengajuanItem } from "@/utils/PengajuanItem";
+import { PengajuanItem, PengajuanPage } from "@/utils/PengajuanItem";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -13,7 +13,7 @@ interface SliderPengajuanProps {
   setSelectedPengajuan: (title: string) => void;
 }
 
-const HeaderPengajuan: FC<SliderPengajuanProps> = ({
+const KategoriPengajuan: FC<SliderPengajuanProps> = ({
   selectedPengajuan,
   setSelectedPengajuan,
 }) => {
@@ -21,12 +21,12 @@ const HeaderPengajuan: FC<SliderPengajuanProps> = ({
     <Swiper
       className="mySwiper"
       spaceBetween={10}
-      slidesPerView={5}
+      slidesPerView={2}
       grabCursor={true}
       simulateTouch={true}
       touchRatio={1}
     >
-      {PengajuanItem.map((item) => (
+      {PengajuanPage.map((item) => (
         <SwiperSlide key={item.id}>
           <div
             className={`hover:bg-secondary text-tertiary hover:text-white p-2 rounded-lg cursor-pointer ${
@@ -44,4 +44,4 @@ const HeaderPengajuan: FC<SliderPengajuanProps> = ({
   );
 };
 
-export default HeaderPengajuan;
+export default KategoriPengajuan;

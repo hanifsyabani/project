@@ -1,21 +1,22 @@
 "use client";
 
 import CardJurnal from "@/components/Card/CardJurnal";
-import HeaderPengajuan from "@/components/Header/HeaderPengajuan";
+import KategoriPengajuan from "@/components/Kategori/KategoriPengajuan";
+import HeaderPengajuan from "@/components/Kategori/KategoriProfil";
 import PengajuanList from "@/components/Profile/PenelitianLuaran/PengajuanData";
-import { PengajuanItem } from "@/utils/PengajuanItem";
+import { PengajuanItem, PengajuanPage } from "@/utils/PengajuanItem";
 import { useState } from "react";
 import { FaCalendarAlt, FaIdCard } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
 
 export default function Pengajuan() {
   const [selectedPengajuan, setSelectedPengajuan] = useState<string>(
-    "Publikasi Karya Ilmiah"
+    "Insentif Publikasi Karya Ilmiah yang terbit dalam Prosiding"
   );
 
   const [jenisPengajuan, setJenisPengajuan] = useState<string>("");
 
-  const filteredItem = PengajuanItem.find(
+  const filteredItem = PengajuanPage.find(
     (item) => item.title === selectedPengajuan
   );
 
@@ -24,7 +25,7 @@ export default function Pengajuan() {
   // }
   return (
     <div className="px-4 py-10">
-      <HeaderPengajuan
+      <KategoriPengajuan
         setSelectedPengajuan={setSelectedPengajuan}
         selectedPengajuan={selectedPengajuan}
       />
@@ -41,7 +42,7 @@ export default function Pengajuan() {
             filteredItem.item ? (
               filteredItem.item.map((subItem) => (
                 <>
-                  <option value={subItem.title}>{subItem.title}</option>
+                  <option value={subItem.name}>{subItem.name}</option>
                 </>
               ))
             ) : (
@@ -84,7 +85,7 @@ export default function Pengajuan() {
               </div>
             </div>
             <button className="bg-[#047857] border border-white text-white hover:bg-white hover:text-[#047857] hover:border-[#047857] font-bold text-center px-3 py-2 rounded-lg  text-sm">
-              Claim
+              Klaim
             </button>
           </div>
         </div>

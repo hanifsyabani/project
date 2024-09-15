@@ -1,15 +1,14 @@
 "use client";
 
 import { PengajuanItem } from "@/utils/PengajuanItem";
-import HeaderPengajuan from "../../Header/HeaderPengajuan";
+import KategoriProfil from "../../Kategori/KategoriProfil";
 import CardJurnal from "../../Card/CardJurnal";
 import { useState } from "react";
 import PengajuanList from "./PengajuanData";
 
 export default function PenelitianLuaran() {
-  const [selectedPengajuan, setSelectedPengajuan] = useState<string>(
-    "Publikasi Karya Ilmiah"
-  );
+  const [selectedPengajuan, setSelectedPengajuan] =
+    useState<string>("Karya Ilmiah");
 
   const renderContent = () => {
     return <PengajuanList title={selectedPengajuan} />;
@@ -17,7 +16,7 @@ export default function PenelitianLuaran() {
 
   return (
     <div className="">
-      <HeaderPengajuan
+      <KategoriProfil
         selectedPengajuan={selectedPengajuan}
         setSelectedPengajuan={setSelectedPengajuan}
       />
