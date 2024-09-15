@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { FaLocationDot } from "react-icons/fa6";
 import { RiGraduationCapFill } from "react-icons/ri";
 import { BsSuitcaseLg } from "react-icons/bs";

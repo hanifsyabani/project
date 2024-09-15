@@ -1,8 +1,7 @@
 import CardJurnal from "@/components/Card/CardJurnal";
-import { PengajuanItem } from "@/utils/PengajuanItem";
-
-export default function PengajuanList({ title }: { title: string }) {
-  const filteredItem = PengajuanItem.find((item) => item.title === title);
+import { KategoriPenelitianLuaranItem } from "@/utils/PengajuanItem";
+export default function PenelitianLuaranData({ title }: { title: string }) {
+  const filteredItem = KategoriPenelitianLuaranItem.find((item) => item.title === title);
   return (
     <div>
       {filteredItem ? (
@@ -21,7 +20,7 @@ export default function PengajuanList({ title }: { title: string }) {
           )}
         </div>
       ) : (
-        <p>Data tidak ditemukan untuk judul "{title}".</p>
+        <p>Data tidak ditemukan untuk judul {title}.</p>
       )}
     </div>
   );

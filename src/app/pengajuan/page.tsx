@@ -1,9 +1,6 @@
 "use client";
 
-import CardJurnal from "@/components/Card/CardJurnal";
 import KategoriPengajuan from "@/components/Kategori/KategoriPengajuan";
-import HeaderPengajuan from "@/components/Kategori/KategoriProfil";
-import PengajuanList from "@/components/Profile/PenelitianLuaran/PengajuanData";
 import { KategoriPengajuanItem } from "@/utils/PengajuanItem";
 import { useState } from "react";
 import { FaCalendarAlt, FaIdCard } from "react-icons/fa";
@@ -20,9 +17,6 @@ export default function Pengajuan() {
     (item) => item.title === selectedPengajuan
   );
 
-  // const renderContent= ()=>{
-  //   return <PengajuanList title={selectedPengajuan} />
-  // }
   return (
     <div className="px-4 py-10">
       <KategoriPengajuan
@@ -33,7 +27,9 @@ export default function Pengajuan() {
       <div className="mt-5">
         {filteredItem ? (
           filteredItem.item && filteredItem.item.length < 2 ? (
-            filteredItem.item.map((subItem) => <h1>{subItem.name}</h1>)
+            filteredItem.item.map((subItem) => (
+              <h1 key={subItem.id}>{subItem.name}</h1>
+            ))
           ) : (
             <select
               name="jenisPengajuan"
@@ -45,9 +41,9 @@ export default function Pengajuan() {
               {filteredItem ? (
                 filteredItem.item ? (
                   filteredItem.item.map((subItem) => (
-                    <>
-                      <option value={subItem.name}>{subItem.name}</option>
-                    </>
+                    <option value={subItem.name} key={subItem.id}>
+                      {subItem.name}
+                    </option>
                   ))
                 ) : (
                   <p>Tidak ada item.</p>
