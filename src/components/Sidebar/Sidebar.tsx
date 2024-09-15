@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import {  FaNewspaper, FaRegUserCircle } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,7 +7,6 @@ import { SidebarItem } from "@/utils/SidebarItem";
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const text = "Welcome";
 
   const renderIcon = (id: number) => {
     switch (id) {
