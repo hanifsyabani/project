@@ -1,7 +1,11 @@
 import { Input } from "@chakra-ui/react";
 
+interface FormPengajuanProps {
+  title: string;
+  item?: any;
+}
 
-export default function FormPengajuan({ item }: { item: any }) {
+export default function FormPengajuan({ item }: { item?: FormPengajuanProps }) {
   return (
     <form>
       <div className="mb-3">

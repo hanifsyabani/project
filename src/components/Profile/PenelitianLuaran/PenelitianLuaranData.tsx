@@ -12,7 +12,6 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import { h1 } from "framer-motion/client";
 import { useState } from "react";
 import { IoAdd } from "react-icons/io5";
 
@@ -21,7 +20,6 @@ export default function PenelitianLuaranData({ title }: { title: string }) {
     (item) => item.title === title
   );
 
-  console.log(filteredItem);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [size] = useState("xl");
