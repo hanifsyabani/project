@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar/Sidebar";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,10 +30,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex ">
-          <Sidebar />
-          <div className="w-[80%] ml-[20%] ">{children}</div>
-        </div>
+        <ChakraProvider>
+          <div className="flex ">
+            <Sidebar />
+            <div className="w-[80%] ml-[20%] ">{children}</div>
+          </div>
+        </ChakraProvider>
       </body>
     </html>
   );

@@ -1,7 +1,23 @@
 import { FaCalendarAlt, FaIdCard } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
 
-export default function CardJurnal() {
+interface JournalInterface  {
+  id: number;
+  eid: string;
+  doi: string;
+  title: string;
+  affilname: string;
+  affiliation_city: string;
+  affiliation_country: string;
+  publication_name: string;
+  author_id: number;
+  cover_date: string;
+  cover_display_date: string;
+  aggregation_type: string;
+  subtypeDescription: string;
+}
+
+export default function CardJurnal({journal} : {journal?: JournalInterface}) {
   return (
     <div>
       <h1 className="font-semibold">

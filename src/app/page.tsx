@@ -16,7 +16,7 @@ export default function Home() {
       case "overview":
         return <Overview />;
       case "penelitianluaran":
-        return <PenelitianLuaran />;
+        return <PenelitianLuaran  />;
       default:
         return <Overview />;
     }
