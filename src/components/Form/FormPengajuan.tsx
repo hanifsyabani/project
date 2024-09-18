@@ -2,7 +2,7 @@ import { Input } from "@chakra-ui/react";
 
 interface FormPengajuanProps {
   title: string;
-  item?: any;
+  // item?: any;
 }
 
 export default function FormPengajuan({ item }: { item?: FormPengajuanProps }) {
