@@ -6,13 +6,21 @@ import { useState } from "react";
 import { FaCalendarAlt, FaIdCard } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
 
+interface Journal {
+  title: string;
+  author: string;
+  year: string;
+  location: string;
+  id: string;
+}
+
 export default function Pengajuan() {
   const [selectedPengajuan, setSelectedPengajuan] = useState<string>(
     "Insentif Publikasi Karya Ilmiah yang terbit dalam Prosiding"
   );
   const [jenisPengajuan, setJenisPengajuan] = useState<string>("");
-  const [currentJournal, setCurrentJournal] = useState<any>(null); // State untuk card yang dipilih
-  const [claimedJournals, setClaimedJournals] = useState<any[]>([]); // State untuk jurnal yang diklaim
+  const [currentJournal, setCurrentJournal] = useState<Journal | null>(null); // State untuk card yang dipilih
+  const [claimedJournals, setClaimedJournals] = useState<Journal[]>([]); // State untuk jurnal yang diklaim
 
   const filteredItem = KategoriPengajuanItem.find(
     (item) => item.title === selectedPengajuan
